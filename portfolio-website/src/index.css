@@ -1,3 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+:root {
+  --default-font: "Roboto", "sans-serif";
+  --off-white-color: #e1e1e1;
+  --inactive-navbar-color: rgba(255, 255, 255, 0.4);
+}
+
 html,
 body,
 #root,
