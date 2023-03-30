@@ -1,14 +1,14 @@
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./scenes/Home/Home";
+import About from "./scenes/About/About";
 
 const App = () => {
   return (
     <div className="App">
-      <main className="main-content">
-        <Navbar />
-        <Home />
-      </main>
+      <Navbar />
+      <Home />
+      <About />
     </div>
   );
 };

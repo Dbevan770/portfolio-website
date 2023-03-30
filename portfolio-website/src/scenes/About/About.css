@@ -1,0 +1,141 @@
+.about {
+  background-color: var(--secondary-bg-color);
+}
+
+.about-section {
+  font-family: var(--default-font);
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 10rem 2rem;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.toggle-label {
+  font-size: 1.5rem;
+  color: var(--inactive-text-color);
+  margin: 1.25rem 0;
+}
+
+.active-label {
+  color: var(--off-white-color);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  border-radius: 34px;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--main-blue);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider::before {
+  position: absolute;
+  border-radius: 50%;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--main-blue);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--main-blue);
+}
+
+input:checked + .slider::before {
+  -webkit-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.about-content {
+  grid-column: 2 / 3;
+  padding: 0em 2em 2em 2em;
+}
+
+.about-bio {
+  color: var(--off-white-color);
+  font-size: 1.25rem;
+  line-height: 2.25rem;
+}
+
+.skills-content {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.skill-grid {
+  grid-column: 1 / 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0 2em 2em 2em;
+  place-items: center;
+  row-gap: 3.5rem;
+}
+
+.skill-grid img {
+  width: 80px;
+  cursor: pointer;
+}
+
+.skill-grid img:hover {
+  outline: 2px solid var(white);
+}
+
+.active-img {
+  outline: 2px solid var(--off-white-color);
+}
+
+.skill-desc {
+  grid-column: 2 / 3;
+  padding: 0 2em 2em 2em;
+}
+
+.skill-desc-title {
+  font-size: 2rem;
+  color: var(--off-white-color);
+  margin-top: 0;
+}
+
+.skill-desc-bio {
+  font-size: 1.25rem;
+  line-height: 2.25rem;
+  color: var(--off-white-color);
+}
