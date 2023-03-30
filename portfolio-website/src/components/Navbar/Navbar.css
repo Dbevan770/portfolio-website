@@ -18,7 +18,7 @@
 .navbar-item {
   position: relative;
   text-decoration: none;
-  color: var(--inactive-navbar-color);
+  color: var(--inactive-text-color);
   font-size: 1.25rem;
 }
 

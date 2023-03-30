@@ -1,4 +1,6 @@
 .hero-section {
+  max-width: 1500px;
+  margin: 0 auto;
   font-family: var(--default-font);
   display: grid;
   grid-template-columns: 1fr 1fr;

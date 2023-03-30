@@ -3,8 +3,10 @@
 :root {
   --default-font: "Roboto", "sans-serif";
   --off-white-color: #e1e1e1;
-  --inactive-navbar-color: rgba(255, 255, 255, 0.4);
+  --inactive-text-color: rgba(255, 255, 255, 0.4);
   --main-blue: #429ef5;
+  --main-bg-color: #060b10;
+  --secondary-bg-color: #15212e;
 }
 
 html,
@@ -17,5 +19,5 @@ body,
 body {
   margin: 0;
   padding: 0;
-  background-color: #060b10;
+  background-color: var(--main-bg-color);
 }
