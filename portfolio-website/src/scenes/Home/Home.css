@@ -1,0 +1,34 @@
+.hero-section {
+  font-family: var(--default-font);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.hero-content {
+  align-self: center;
+  padding: 2em;
+}
+
+.hero-title {
+  color: var(--main-blue);
+  font-size: 6rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.hero-subtitle {
+  color: var(--off-white-color);
+  font-size: 3rem;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+.hero-body {
+  color: var(--off-white-color);
+  font-size: 1.25rem;
+  line-height: 2.25rem;
+}
+
+.hero-image {
+  width: 100%;
+}
