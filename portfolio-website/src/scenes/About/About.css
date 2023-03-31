@@ -82,17 +82,29 @@ input:checked + .slider::before {
 .about-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  max-height: 384px;
 }
 
 .about-content {
-  grid-column: 2 / 3;
-  padding: 0em 2em 2em 2em;
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+}
+
+.about-image {
+  grid-column: 1 / 2;
+  height: 384px;
+  border-radius: 1rem;
+  border: 2px solid var(--off-white-color);
 }
 
 .about-bio {
+  grid-column: 2 / 3;
   color: var(--off-white-color);
   font-size: 1.25rem;
   line-height: 2.25rem;
+  padding: 0em 2em 2em 2em;
 }
 
 .skills-content {

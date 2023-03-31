@@ -44,6 +44,7 @@ const About = () => {
         <div className="about-container">
           {active === "about" ? (
             <div className="about-content">
+              <img className="about-image" src="/images/about-me-image.JPG" />
               <p className="about-bio">
                 I have been programming for over 10 years as a hobby, initially
                 starting with C# to learn the Unity3D game engine. I joined the
