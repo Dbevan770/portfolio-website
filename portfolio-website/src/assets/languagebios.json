@@ -1,9 +1,9 @@
 {
-  "ts": {
+  "typescript": {
     "title": "Typescript",
     "bio": "This is a test of the JSON file."
   },
-  "js": {
+  "javascript": {
     "title": "Javascript",
     "bio": "If this worked this should change!"
   },
@@ -16,11 +16,11 @@
     "bio": "This website is made using React and Typescript!"
   },
 
-  "html": {
+  "html5": {
     "title": "HTML",
     "bio": "HTML is not a programming language"
   },
-  "css": {
+  "css3": {
     "title": "CSS",
     "bio": "AESTHETIC"
   },
@@ -28,24 +28,24 @@
     "title": "Redux",
     "bio": "The most common way to manage state"
   },
-  "mongo": {
+  "mongodb": {
     "title": "MongoDB",
     "bio": "This is pretty sick for making databases. I prefer it over MySQL."
   },
 
-  "py": {
+  "python": {
     "title": "Python",
     "bio": "Everyone knows Python."
   },
-  "cs": {
+  "csharp": {
     "title": "C#",
     "bio": "Microsoft Java"
   },
-  "cpp": {
+  "cplusplus": {
     "title": "C++",
     "bio": "The foundation of everything."
   },
-  "sql": {
+  "mysql": {
     "title": "MySQL",
     "bio": "I use it if my databases need to be relational"
   }

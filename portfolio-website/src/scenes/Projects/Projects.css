@@ -10,6 +10,23 @@
   flex-direction: column;
 }
 
+.project-summary-showcase {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 2rem 0;
+  background-color: #0d0f12;
+  animation: expandShowcase 3s forwards;
+}
+
+.project-showcase-bg {
+  position: absolute;
+  width: 100vw;
+  z-index: -1;
+  background-color: #161a1f;
+  animation: expandShowcase 3s forwards;
+}
+
 .projects-title {
   margin: 0;
   color: var(--off-white-color);
@@ -27,4 +44,14 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   place-items: center;
+}
+
+@keyframes expandShowcase {
+  from {
+    height: 0px;
+  }
+
+  to {
+    height: 500px;
+  }
 }

@@ -42,6 +42,9 @@ const Projects = (props: Project) => {
           <h3 className="projects-title">Projects</h3>
           <span className="projects-subtitle">Click to See More!</span>
         </div>
+        <div className="project-summary-showcase">
+          <div className="project-showcase-bg"></div>
+        </div>
         <div className="projects-container">
           {projects &&
             projects.map((project: Project) => <ProjectCard {...project} />)}
