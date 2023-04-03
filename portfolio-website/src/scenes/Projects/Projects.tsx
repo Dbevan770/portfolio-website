@@ -9,7 +9,7 @@ interface Project {
   live?: string;
 }
 
-const Projects = (props: Project) => {
+const Projects = () => {
   const projects: Array<Project> = [
     {
       title: "Mystery Inc. Bookstore",

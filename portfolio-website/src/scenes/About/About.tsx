@@ -1,5 +1,5 @@
 import "./About.css";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import SkillBio from "../../components/SkillBio/SkillBio";
 
 const About = () => {
@@ -19,6 +19,15 @@ const About = () => {
     "cplusplus",
     "mysql",
   ];
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        console.log("I have been spotted!");
+      }
+    });
+  };
 
   const handleToggle = () => {
     if (active === "about") {
@@ -32,8 +41,24 @@ const About = () => {
     setActiveImg(name);
   };
 
+  useEffect(() => {
+    const options = {
+      rootMargin: "-200px 0px -50% 0px",
+      threshold: 0.4,
+    };
+    const observer = new IntersectionObserver(handleIntersection, options);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="about" id="about">
+    <div className="about" id="about" ref={sectionRef}>
       <section className="about-section">
         <div className="toggle-container">
           <span
