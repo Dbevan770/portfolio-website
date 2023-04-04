@@ -1,5 +1,6 @@
 import "./Projects.css";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
+import { useState } from "react";
 
 interface Project {
   title: string;
@@ -10,6 +11,7 @@ interface Project {
 }
 
 const Projects = () => {
+  const [activeProject, setActiveProject] = useState<string>("");
   const projects: Array<Project> = [
     {
       title: "Mystery Inc. Bookstore",
@@ -35,6 +37,10 @@ const Projects = () => {
     },
   ];
 
+  const handleChangeActiveProject = (name: string) => {
+    setActiveProject(name);
+  };
+
   return (
     <div className="projects" id="projects">
       <section className="projects-section">
@@ -42,12 +48,20 @@ const Projects = () => {
           <h3 className="projects-title">Projects</h3>
           <span className="projects-subtitle">Click to See More!</span>
         </div>
-        <div className="project-summary-showcase">
-          <div className="project-showcase-bg"></div>
-        </div>
+        {activeProject !== "" && (
+          <div className="project-summary-showcase">
+            <div className="project-showcase-bg"></div>
+          </div>
+        )}
         <div className="projects-container">
           {projects &&
-            projects.map((project: Project) => <ProjectCard {...project} />)}
+            projects.map((project: Project) => (
+              <ProjectCard
+                {...project}
+                changeActiveProject={handleChangeActiveProject}
+                isHighlighted={activeProject === project.title}
+              />
+            ))}
         </div>
       </section>
     </div>

@@ -7,6 +7,16 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: scale(1.1);
+  transition: transform ease-in-out 0.2s;
+}
+
+.highlighted {
+  outline: 2px solid var(--off-white-color);
 }
 
 .project-image {

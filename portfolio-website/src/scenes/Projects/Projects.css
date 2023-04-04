@@ -8,15 +8,16 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 2rem;
 }
 
 .project-summary-showcase {
   display: flex;
   justify-content: center;
   position: relative;
-  margin: 2rem 0;
   background-color: #0d0f12;
   animation: expandShowcase 3s forwards;
+  margin-bottom: 2rem;
 }
 
 .project-showcase-bg {
