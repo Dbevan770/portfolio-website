@@ -46,7 +46,7 @@ const Projects = () => {
       <section className="projects-section">
         <div className="projects-header">
           <h3 className="projects-title">Projects</h3>
-          <span className="projects-subtitle">Click to See More!</span>
+          <span className="projects-subtitle">Click to see more!</span>
         </div>
         {activeProject !== "" && (
           <div className="project-summary-showcase">
@@ -55,8 +55,9 @@ const Projects = () => {
         )}
         <div className="projects-container">
           {projects &&
-            projects.map((project: Project) => (
+            projects.map((project: Project, index: number) => (
               <ProjectCard
+                key={index}
                 {...project}
                 changeActiveProject={handleChangeActiveProject}
                 isHighlighted={activeProject === project.title}
