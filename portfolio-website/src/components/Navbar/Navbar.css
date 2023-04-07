@@ -1,8 +1,17 @@
 .navbar-container {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   font-family: var(--default-font);
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: background-color ease-in-out 0.25s;
+}
+
+.navbar-container:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .navbar-list {

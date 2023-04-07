@@ -122,13 +122,35 @@ input:checked + .slider::before {
   row-gap: 3.5rem;
 }
 
-.skill-grid img {
+.skill-grid-item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skill-grid-item {
   width: 80px;
   cursor: pointer;
 }
 
-.skill-grid img:hover {
-  outline: 2px solid var(white);
+.skill-grid-item-container:hover {
+  outline: 2px solid var(--off-white-color);
+}
+
+.skill-grid-item-container:hover .skill-grid-tagline {
+  visibility: visible;
+  background-color: var(--off-white-color);
+}
+
+.skill-grid-tagline {
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 0.25rem 0.25rem;
+  font-weight: 700;
+  visibility: hidden;
+  color: var(--secondary-bg-color);
+  text-transform: uppercase;
 }
 
 .active-img {

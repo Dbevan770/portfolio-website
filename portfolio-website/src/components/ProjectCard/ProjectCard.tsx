@@ -1,8 +1,15 @@
 import "./ProjectCard.css";
 
 const ProjectCard = (props: any) => {
+  const handleClick = () => {
+    props.changeActiveProject(props.title);
+  };
+
   return (
-    <div className="project-card">
+    <div
+      className={`project-card ${props.isHighlighted ? "highlighted" : ""}`}
+      onClick={handleClick}
+    >
       <div className="project-image">
         <img
           className="project-image"

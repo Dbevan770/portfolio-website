@@ -11,7 +11,7 @@ const Home = () => {
             I'm a full-stack software developer that recently transitioned out
             of the US Army where I worked as a Cyber Operations Specialist (17C)
             doing cyber security. I am excited to take the next step in my
-            journey and and am confident I will be a fantastic addition to your
+            journey and am confident I will be a fantastic addition to your
             team.
           </p>
         </div>
