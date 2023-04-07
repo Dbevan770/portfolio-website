@@ -9,11 +9,25 @@
   --secondary-bg-color: #15212e;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: var(--default-font);
+}
+
 html,
 body,
-#root,
-.App {
+#root {
   height: 100%;
+}
+
+.App {
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {

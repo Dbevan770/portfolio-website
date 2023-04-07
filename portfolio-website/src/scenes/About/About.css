@@ -82,17 +82,29 @@ input:checked + .slider::before {
 .about-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  max-height: 384px;
 }
 
 .about-content {
-  grid-column: 2 / 3;
-  padding: 0em 2em 2em 2em;
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+}
+
+.about-image {
+  grid-column: 1 / 2;
+  height: 384px;
+  border-radius: 1rem;
+  border: 2px solid var(--off-white-color);
 }
 
 .about-bio {
+  grid-column: 2 / 3;
   color: var(--off-white-color);
   font-size: 1.25rem;
   line-height: 2.25rem;
+  padding: 0em 2em 2em 2em;
 }
 
 .skills-content {
@@ -110,13 +122,35 @@ input:checked + .slider::before {
   row-gap: 3.5rem;
 }
 
-.skill-grid img {
+.skill-grid-item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skill-grid-item {
   width: 80px;
   cursor: pointer;
 }
 
-.skill-grid img:hover {
-  outline: 2px solid var(white);
+.skill-grid-item-container:hover {
+  outline: 2px solid var(--off-white-color);
+}
+
+.skill-grid-item-container:hover .skill-grid-tagline {
+  visibility: visible;
+  background-color: var(--off-white-color);
+}
+
+.skill-grid-tagline {
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 0.25rem 0.25rem;
+  font-weight: 700;
+  visibility: hidden;
+  color: var(--secondary-bg-color);
+  text-transform: uppercase;
 }
 
 .active-img {

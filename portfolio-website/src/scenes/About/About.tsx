@@ -1,10 +1,33 @@
 import "./About.css";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import SkillBio from "../../components/SkillBio/SkillBio";
 
 const About = () => {
   const [active, setActive] = useState<string>("about");
-  const [activeImg, setActiveImg] = useState<string>("ts");
+  const [activeImg, setActiveImg] = useState<string>("typescript");
+  const languages = [
+    "typescript",
+    "javascript",
+    "nodejs",
+    "react",
+    "html5",
+    "css3",
+    "redux",
+    "mongodb",
+    "python",
+    "csharp",
+    "cplusplus",
+    "mysql",
+  ];
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        console.log("I have been spotted!");
+      }
+    });
+  };
 
   const handleToggle = () => {
     if (active === "about") {
@@ -18,8 +41,24 @@ const About = () => {
     setActiveImg(name);
   };
 
+  useEffect(() => {
+    const options = {
+      rootMargin: "-200px 0px -50% 0px",
+      threshold: 0.4,
+    };
+    const observer = new IntersectionObserver(handleIntersection, options);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="about" id="about">
+    <div className="about" id="about" ref={sectionRef}>
       <section className="about-section">
         <div className="toggle-container">
           <span
@@ -44,6 +83,7 @@ const About = () => {
         <div className="about-container">
           {active === "about" ? (
             <div className="about-content">
+              <img className="about-image" src="/images/about-me-image.JPG" />
               <p className="about-bio">
                 I have been programming for over 10 years as a hobby, initially
                 starting with C# to learn the Unity3D game engine. I joined the
@@ -59,80 +99,22 @@ const About = () => {
           ) : (
             <div className="skills-content">
               <div className="skill-grid">
-                <img
-                  className={activeImg === "ts" ? "active-img" : ""}
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-                  alt="Typescript"
-                  onClick={() => changeActiveImg("ts")}
-                />
-                <img
-                  className={activeImg === "js" ? "active-img" : ""}
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                  alt="Javascript"
-                  onClick={() => changeActiveImg("js")}
-                />
-                <img
-                  className={activeImg === "nodejs" ? "active-img" : ""}
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                  alt="NodeJS"
-                  onClick={() => changeActiveImg("nodejs")}
-                />
-                <img
-                  className={activeImg === "react" ? "active-img" : ""}
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                  alt="React"
-                  onClick={() => changeActiveImg("react")}
-                />
-
-                <img
-                  className={activeImg === "html" ? "active-img" : ""}
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                  alt="HTML"
-                  onClick={() => changeActiveImg("html")}
-                />
-                <img
-                  className={activeImg === "css" ? "active-img" : ""}
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-                  alt="CSS"
-                  onClick={() => changeActiveImg("css")}
-                />
-                <img
-                  className={activeImg === "redux" ? "active-img" : ""}
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg"
-                  alt="Redux"
-                  onClick={() => changeActiveImg("redux")}
-                />
-                <img
-                  className={activeImg === "mongo" ? "active-img" : ""}
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
-                  alt="MongoDB"
-                  onClick={() => changeActiveImg("mongo")}
-                />
-
-                <img
-                  className={activeImg === "py" ? "active-img" : ""}
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                  alt="Python"
-                  onClick={() => changeActiveImg("py")}
-                />
-                <img
-                  className={activeImg === "cs" ? "active-img" : ""}
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
-                  alt="CSharp"
-                  onClick={() => changeActiveImg("cs")}
-                />
-                <img
-                  className={activeImg === "cpp" ? "active-img" : ""}
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
-                  alt="CPlusPlus"
-                  onClick={() => changeActiveImg("cpp")}
-                />
-                <img
-                  className={activeImg === "sql" ? "active-img" : ""}
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
-                  alt="MySQL"
-                  onClick={() => changeActiveImg("sql")}
-                />
+                {languages &&
+                  languages.map((language: string, index: number) => {
+                    return (
+                      <div className="skill-grid-item-container" key={index}>
+                        <img
+                          className={`skill-grid-item ${
+                            activeImg === language ? "active-img" : ""
+                          }`}
+                          src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${language}/${language}-original.svg`}
+                          alt={language}
+                          onClick={() => changeActiveImg(language)}
+                        />
+                        <span className="skill-grid-tagline">{language}</span>
+                      </div>
+                    );
+                  })}
               </div>
               <div className="skill-desc">
                 <SkillBio language={activeImg} />
