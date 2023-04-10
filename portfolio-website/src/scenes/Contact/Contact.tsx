@@ -45,17 +45,20 @@ const Contact = () => {
               Send me a message using this contact form or reach out to me via
               the platforms below!
             </span>
-            <p className="contact-link">
-              <img src="/icons/icons8-gmail-24.png" />{" "}
-              daniel.j.bevan96@gmail.com
-            </p>
-            <p className="contact-link">
-              <img src="/icons/icons8-linkedin-24.png" />{" "}
-              linkedin.com/in/daniel-j-bevan/
-            </p>
-            <p className="contact-link">
-              <img src="/icons/icons8-github-24.png" /> github.com/Dbevan770
-            </p>
+            <div className="contact-links">
+              <div className="contact-link">
+                <img src="/icons/icons8-gmail-24.png" />{" "}
+                <p className="link-text">daniel.j.bevan96@gmail.com</p>
+              </div>
+              <div className="contact-link">
+                <img src="/icons/icons8-linkedin-24.png" />{" "}
+                <p className="link-text">linkedin.com/in/daniel-j-bevan/</p>
+              </div>
+              <div className="contact-link">
+                <img src="/icons/icons8-github-24.png" />
+                <p className="link-text">github.com/Dbevan770</p>
+              </div>
+            </div>
           </div>
           {success ? (
             <div className="form-success-container">

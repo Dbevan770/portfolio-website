@@ -80,48 +80,46 @@ const About = () => {
             Skills & Technologies
           </span>
         </div>
-        <div className="about-container">
-          {active === "about" ? (
-            <div className="about-content">
-              <img className="about-image" src="/images/about-me-image.JPG" />
-              <p className="about-bio">
-                I have been programming for over 10 years as a hobby, initially
-                starting with C# to learn the Unity3D game engine. I joined the
-                Army out of high school as an Infantryman before changing my job
-                to a Cyber Operations Specialist. During the school, I learned
-                C++ and Python. As time went on I spent more time exploring
-                developing my own websites initially with purely front-end but
-                as I discovered my knack for backend infrastructure and
-                leveraging my networking expertise I dedicated myself to the
-                full-stack pipeline.
-              </p>
+        {active === "about" ? (
+          <div className="about-content">
+            <img className="about-image" src="/images/About_Me.PNG" />
+            <p className="about-bio">
+              I have been programming for over 10 years as a hobby, initially
+              starting with C# to learn the Unity3D game engine. I joined the
+              Army out of high school as an Infantryman before changing my job
+              to a Cyber Operations Specialist. During the school, I learned C++
+              and Python. <br />
+              <br /> As time went on I spent more time exploring developing my
+              own websites initially with purely front-end but as I discovered
+              my knack for backend infrastructure and leveraging my networking
+              expertise I dedicated myself to the full-stack pipeline.
+            </p>
+          </div>
+        ) : (
+          <div className="skills-content">
+            <div className="skill-grid">
+              {languages &&
+                languages.map((language: string, index: number) => {
+                  return (
+                    <div className="skill-grid-item-container" key={index}>
+                      <img
+                        className={`skill-grid-item ${
+                          activeImg === language ? "active-img" : ""
+                        }`}
+                        src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${language}/${language}-original.svg`}
+                        alt={language}
+                        onClick={() => changeActiveImg(language)}
+                      />
+                      <span className="skill-grid-tagline">{language}</span>
+                    </div>
+                  );
+                })}
             </div>
-          ) : (
-            <div className="skills-content">
-              <div className="skill-grid">
-                {languages &&
-                  languages.map((language: string, index: number) => {
-                    return (
-                      <div className="skill-grid-item-container" key={index}>
-                        <img
-                          className={`skill-grid-item ${
-                            activeImg === language ? "active-img" : ""
-                          }`}
-                          src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${language}/${language}-original.svg`}
-                          alt={language}
-                          onClick={() => changeActiveImg(language)}
-                        />
-                        <span className="skill-grid-tagline">{language}</span>
-                      </div>
-                    );
-                  })}
-              </div>
-              <div className="skill-desc">
-                <SkillBio language={activeImg} />
-              </div>
+            <div className="skill-desc">
+              <SkillBio language={activeImg} />
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </section>
     </div>
   );

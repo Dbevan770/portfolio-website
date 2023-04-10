@@ -82,7 +82,7 @@ input:checked + .slider::before {
 .about-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  max-height: 384px;
+  max-height: 462px;
 }
 
 .about-content {
@@ -94,9 +94,7 @@ input:checked + .slider::before {
 
 .about-image {
   grid-column: 1 / 2;
-  height: 384px;
-  border-radius: 1rem;
-  border: 2px solid var(--off-white-color);
+  height: 462px;
 }
 
 .about-bio {
@@ -172,4 +170,49 @@ input:checked + .slider::before {
   font-size: 1.25rem;
   line-height: 2.25rem;
   color: var(--off-white-color);
+}
+
+@media screen and (max-width: 480px) {
+  .about-section {
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem 0;
+  }
+
+  .toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  .toggle-label {
+    font-size: 1rem;
+  }
+
+  .slider::before {
+    width: 16px;
+    height: 16px;
+    left: 2px;
+    bottom: 2px;
+  }
+
+  .about-content {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .about-bio {
+    font-size: 1rem;
+    padding: 0;
+    text-align: center;
+    padding: 0 1rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+
+  .about-image {
+    width: 100%;
+    height: auto;
+  }
 }

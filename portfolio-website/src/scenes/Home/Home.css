@@ -34,3 +34,26 @@
 .hero-image {
   width: 100%;
 }
+
+@media screen and (max-width: 480px) {
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .hero-body {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
