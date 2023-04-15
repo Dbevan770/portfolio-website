@@ -47,6 +47,12 @@
   place-items: center;
 }
 
+.showcase-grid {
+  opacity: 0;
+  animation: showElement 1s forwards;
+  animation-delay: 3s;
+}
+
 @keyframes expandShowcase {
   from {
     height: 0px;
@@ -54,6 +60,15 @@
 
   to {
     height: 500px;
+  }
+}
+
+@keyframes showElement {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

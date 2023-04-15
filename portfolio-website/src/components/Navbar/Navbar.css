@@ -31,10 +31,6 @@
   font-size: 1.25rem;
 }
 
-.active {
-  color: var(--off-white-color);
-}
-
 .underline-anim::after {
   content: "";
   position: absolute;

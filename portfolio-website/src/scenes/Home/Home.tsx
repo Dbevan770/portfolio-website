@@ -1,4 +1,5 @@
 import "./Home.css";
+import ImgPlaceholder from "../../components/ImgPlaceholder/ImgPlaceholder";
 
 const Home = () => {
   return (
@@ -15,11 +16,17 @@ const Home = () => {
             team.
           </p>
         </div>
-        <img
+        <ImgPlaceholder
+          name="hero-image"
+          src="/images/hero.png"
+          width="750px"
+          height="524px"
+        />
+        {/* <img
           className="hero-image"
           src="/images/hero.png"
           alt="Stylized image of a coding window"
-        />
+        /> */}
       </section>
     </div>
   );

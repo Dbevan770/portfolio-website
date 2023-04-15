@@ -1,64 +1,51 @@
 import "./About.css";
 import { useState, useEffect, useRef } from "react";
 import SkillBio from "../../components/SkillBio/SkillBio";
+import ImgPlaceholder from "../../components/ImgPlaceholder/ImgPlaceholder";
+
+export interface Language {
+  id: string;
+  title: string;
+  bio: string;
+}
 
 const About = () => {
   const [active, setActive] = useState<string>("about");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [activeImg, setActiveImg] = useState<string>("typescript");
-  const languages = [
-    "typescript",
-    "javascript",
-    "nodejs",
-    "react",
-    "html5",
-    "css3",
-    "redux",
-    "mongodb",
-    "python",
-    "csharp",
-    "cplusplus",
-    "mysql",
-  ];
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const [languages, setLanguages] = useState<Language[]>([]);
 
-  const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        console.log("I have been spotted!");
-      }
-    });
+  const fetchLanguages = async () => {
+    try {
+      setIsLoading(true);
+      const response = await fetch("./assets/languagebios.json");
+      const jsonResponse = await response.json();
+      const languagesArray = Object.keys(jsonResponse).map((key) => ({
+        id: key,
+        ...jsonResponse[key],
+      }));
+      setLanguages(languagesArray);
+      setIsLoading(false);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const handleToggle = () => {
     if (active === "about") {
       setActive("skills");
+      fetchLanguages();
     } else {
       setActive("about");
     }
   };
 
-  const changeActiveImg = (name: string) => {
-    setActiveImg(name);
+  const changeActiveImg = (id: string) => {
+    setActiveImg(id);
   };
 
-  useEffect(() => {
-    const options = {
-      rootMargin: "-200px 0px -50% 0px",
-      threshold: 0.4,
-    };
-    const observer = new IntersectionObserver(handleIntersection, options);
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
   return (
-    <div className="about" id="about" ref={sectionRef}>
+    <div className="about" id="about">
       <section className="about-section">
         <div className="toggle-container">
           <span
@@ -82,7 +69,12 @@ const About = () => {
         </div>
         {active === "about" ? (
           <div className="about-content">
-            <img className="about-image" src="/images/About_Me.PNG" />
+            <ImgPlaceholder
+              name="about-image"
+              src="/images/About_Me.PNG"
+              width="661px"
+              height="462px"
+            />
             <p className="about-bio">
               I have been programming for over 10 years as a hobby, initially
               starting with C# to learn the Unity3D game engine. I joined the
@@ -97,27 +89,53 @@ const About = () => {
           </div>
         ) : (
           <div className="skills-content">
-            <div className="skill-grid">
-              {languages &&
-                languages.map((language: string, index: number) => {
-                  return (
-                    <div className="skill-grid-item-container" key={index}>
-                      <img
-                        className={`skill-grid-item ${
-                          activeImg === language ? "active-img" : ""
-                        }`}
-                        src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${language}/${language}-original.svg`}
-                        alt={language}
-                        onClick={() => changeActiveImg(language)}
-                      />
-                      <span className="skill-grid-tagline">{language}</span>
-                    </div>
-                  );
-                })}
-            </div>
-            <div className="skill-desc">
-              <SkillBio language={activeImg} />
-            </div>
+            {isLoading ? (
+              <>
+                <div className="skills-loading"></div>
+                <div className="description-loading">
+                  <div className="description-loading-title"></div>
+                  <div className="description-loading-bio"></div>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="skill-grid">
+                  {languages &&
+                    languages.map((language: any, index: number) => {
+                      return (
+                        <div className="skill-grid-item-container" key={index}>
+                          <ImgPlaceholder
+                            name={`skill-grid-item ${
+                              activeImg === language.id ? "active-img" : ""
+                            }`}
+                            src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${language.id}/${language.id}-original.svg`}
+                            width="80px"
+                            height="80px"
+                            changeActiveImg={changeActiveImg}
+                            id={language.id}
+                          />
+                          {/* <img
+                            className={`skill-grid-item ${
+                              activeImg === language.id ? "active-img" : ""
+                            }`}
+                            src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${language.id}/${language.id}-original.svg`}
+                            alt={language.id}
+                            onClick={() => changeActiveImg(language.id)}
+                          /> */}
+                          <span className="skill-grid-tagline">
+                            {language.title}
+                          </span>
+                        </div>
+                      );
+                    })}
+                </div>
+                <div className="skill-desc">
+                  <SkillBio
+                    language={languages.find((lang) => lang.id === activeImg)}
+                  />
+                </div>
+              </>
+            )}
           </div>
         )}
       </section>

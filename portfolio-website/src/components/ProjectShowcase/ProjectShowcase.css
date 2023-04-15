@@ -1,0 +1,22 @@
+.showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  width: 100%;
+}
+
+.showcase-project-title {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  color: white;
+  font-size: 3rem;
+  padding-left: 2rem;
+}
+
+.showcase-project-description {
+  grid-column: 2 / 3;
+  grid-row: 2 / 4;
+  color: var(--off-white-color);
+  font-size: 1.125rem;
+  padding-left: 2rem;
+}

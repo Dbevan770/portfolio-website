@@ -1,6 +1,7 @@
 import "./Projects.css";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import { useState } from "react";
+import ProjectShowcase from "../../components/ProjectShowcase/ProjectShowcase";
 
 interface Project {
   title: string;
@@ -31,7 +32,7 @@ const Projects = () => {
     {
       title: "Bank Tracker",
       description:
-        "Application that allows you to upload a bank CSV and have it upload the information to Google Sheets with formatting.",
+        "Application that uploads a bank CSV to Google Sheets with formatting.",
       languages: ["py", "js", "html", "css"],
       github: "https://github.com/Dbevan770/bank-tracker",
     },
@@ -50,6 +51,7 @@ const Projects = () => {
         </div>
         {activeProject !== "" && (
           <div className="project-summary-showcase">
+            <ProjectShowcase />
             <div className="project-showcase-bg"></div>
           </div>
         )}
