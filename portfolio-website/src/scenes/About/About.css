@@ -151,6 +151,40 @@ input:checked + .slider::before {
   text-transform: uppercase;
 }
 
+.skills-loading {
+  height: 462px;
+  padding: 0 2em 2em 2em;
+  background: linear-gradient(90deg, #2e2f34 25%, #42434a 50%, #2e2f34 75%);
+  background-size: 200% 100%;
+  animation: pulse 1.5s infinite;
+  border-radius: 0.5rem;
+}
+
+.description-loading {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2em 2em 2em;
+}
+
+.description-loading-title {
+  width: 250px;
+  height: 50px;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #2e2f34 25%, #42434a 50%, #2e2f34 75%);
+  background-size: 200% 100%;
+  animation: pulse 1.5s infinite;
+  border-radius: 0.5rem;
+}
+
+.description-loading-bio {
+  width: 600px;
+  height: 400px;
+  background: linear-gradient(90deg, #2e2f34 25%, #42434a 50%, #2e2f34 75%);
+  background-size: 200% 100%;
+  animation: pulse 1.5s infinite;
+  border-radius: 0.5rem;
+}
+
 .active-img {
   outline: 2px solid var(--off-white-color);
 }
@@ -170,6 +204,15 @@ input:checked + .slider::before {
   font-size: 1.25rem;
   line-height: 2.25rem;
   color: var(--off-white-color);
+}
+
+@keyframes pulse {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 @media screen and (max-width: 480px) {

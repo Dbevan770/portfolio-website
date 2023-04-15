@@ -1,15 +1,19 @@
 import "./SkillBio.css";
-import jsonData from "../../assets/languagebios.json";
+import { Language } from "../../scenes/About/About";
 
-const SkillBio = ({ language }: { language: string }) => {
+interface SkillBioProps {
+  language: Language | undefined;
+}
+
+const SkillBio = ({ language }: SkillBioProps) => {
+  if (!language) {
+    return null;
+  }
+
   return (
     <>
-      <h3 className="skill-desc-title">
-        {jsonData[language as keyof typeof jsonData].title}
-      </h3>
-      <p className="skill-desc-bio">
-        {jsonData[language as keyof typeof jsonData].bio}
-      </p>
+      <h3 className="skill-desc-title">{language.title}</h3>
+      <p className="skill-desc-bio">{language.bio}</p>
     </>
   );
 };

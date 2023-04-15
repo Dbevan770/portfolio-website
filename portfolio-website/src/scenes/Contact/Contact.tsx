@@ -55,7 +55,7 @@ const Contact = () => {
                 <p className="link-text">linkedin.com/in/daniel-j-bevan/</p>
               </div>
               <div className="contact-link">
-                <img src="/icons/icons8-github-24.png" />
+                <img className="link-icon" src="/icons/github-mark-white.png" />
                 <p className="link-text">github.com/Dbevan770</p>
               </div>
             </div>
