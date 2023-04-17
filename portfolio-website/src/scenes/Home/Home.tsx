@@ -17,8 +17,9 @@ const Home = () => {
           </p>
         </div>
         <ImgPlaceholder
-          name="hero-image"
-          src="/images/hero.png"
+          containerClass="hero-image-container"
+          imgClass="hero-image"
+          src="/images/hero.avif"
           width="750px"
           height="524px"
         />

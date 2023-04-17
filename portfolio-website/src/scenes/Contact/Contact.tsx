@@ -47,15 +47,27 @@ const Contact = () => {
             </span>
             <div className="contact-links">
               <div className="contact-link">
-                <img src="/icons/icons8-gmail-24.png" />{" "}
+                <img
+                  className="link-icon"
+                  src="/icons/icons8-gmail-24.avif"
+                  alt="GMail Logo"
+                />
                 <p className="link-text">daniel.j.bevan96@gmail.com</p>
               </div>
               <div className="contact-link">
-                <img src="/icons/icons8-linkedin-24.png" />{" "}
+                <img
+                  className="link-icon"
+                  src="/icons/icons8-linkedin-24.avif"
+                  alt="LinkedIn Logo"
+                />
                 <p className="link-text">linkedin.com/in/daniel-j-bevan/</p>
               </div>
               <div className="contact-link">
-                <img className="link-icon" src="/icons/github-mark-white.png" />
+                <img
+                  className="link-icon"
+                  src="/icons/github-mark-white.avif"
+                  alt="GitHub Logo"
+                />
                 <p className="link-text">github.com/Dbevan770</p>
               </div>
             </div>

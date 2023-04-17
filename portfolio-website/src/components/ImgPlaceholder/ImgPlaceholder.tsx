@@ -11,7 +11,7 @@ export default function ImgPlaceholder(props: any) {
   return (
     <>
       <div
-        className={`${props.name} ${isLoading ? "img-loading" : ""}`}
+        className={`${props.containerClass} ${isLoading ? "img-loading" : ""}`}
         style={{
           width: props.width,
           height: props.height,
@@ -35,9 +35,8 @@ export default function ImgPlaceholder(props: any) {
         )}
         <img
           src={props.src}
+          className={`${props.imgClass}`}
           style={{
-            width: props.width,
-            height: props.height,
             opacity: isLoading ? 0 : 1,
           }}
           onLoad={handleLoad}
