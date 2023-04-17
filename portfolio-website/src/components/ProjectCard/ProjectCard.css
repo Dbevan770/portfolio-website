@@ -53,14 +53,32 @@
 
 .project-btn {
   text-decoration: none;
-  color: var(--off-white-color);
+  color: white;
   background-color: var(--main-blue);
   padding: 0.5em 2em;
+  border-radius: 0.25rem;
+}
+
+.project-btn:hover {
+  outline: 2px solid white;
 }
 
 @media screen and (max-width: 480px) {
   .project-card {
     width: 100%;
     border-radius: 0;
+  }
+
+  .project-image-container {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .highlighted {
+    outline: none;
+  }
+
+  .project-card:hover {
+    transform: none;
   }
 }

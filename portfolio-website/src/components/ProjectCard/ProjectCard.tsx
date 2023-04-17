@@ -1,4 +1,5 @@
 import "./ProjectCard.css";
+import ImgPlaceholder from "../ImgPlaceholder/ImgPlaceholder";
 
 const ProjectCard = (props: any) => {
   const handleClick = () => {
@@ -11,12 +12,21 @@ const ProjectCard = (props: any) => {
       onClick={handleClick}
     >
       <div className="project-image">
-        <img
+        <ImgPlaceholder
+          containerClass="project-image-container"
+          imgClass="project-image"
+          src={`/images/projects/${props.title
+            .replace(/[^A-Z0-9]/gi, "")
+            .toLowerCase()}.avif`}
+          width="450px"
+          height="235px"
+        />
+        {/* <img
           className="project-image"
           src={`/images/projects/${props.title
             .replace(/[^A-Z0-9]/gi, "")
             .toLowerCase()}.jpg`}
-        />
+        /> */}
       </div>
       <div className="project-card-details">
         <div className="project-title">{props.title}</div>

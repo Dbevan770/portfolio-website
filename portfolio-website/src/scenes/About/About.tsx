@@ -56,7 +56,8 @@ const About = () => {
             About Me
           </span>
           <label className="switch">
-            <input type="checkbox" onClick={handleToggle} />
+            <label htmlFor="about-toggle"></label>
+            <input name="about-toggle" type="checkbox" onClick={handleToggle} />
             <span className="slider"></span>
           </label>
           <span
@@ -70,8 +71,9 @@ const About = () => {
         {active === "about" ? (
           <div className="about-content">
             <ImgPlaceholder
-              name="about-image"
-              src="/images/About_Me.PNG"
+              containerClass="about-image-container"
+              imgClass="about-image"
+              src="/images/About_Me.avif"
               width="661px"
               height="462px"
             />
@@ -105,7 +107,8 @@ const About = () => {
                       return (
                         <div className="skill-grid-item-container" key={index}>
                           <ImgPlaceholder
-                            name={`skill-grid-item ${
+                            containerClass="skill-grid-item-container"
+                            imgClass={`skill-grid-item ${
                               activeImg === language.id ? "active-img" : ""
                             }`}
                             src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${language.id}/${language.id}-original.svg`}
