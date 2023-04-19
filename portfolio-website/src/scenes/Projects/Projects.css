@@ -16,7 +16,7 @@
   justify-content: center;
   position: relative;
   background-color: #0d0f12;
-  animation: expandShowcase 3s forwards;
+  animation: expandShowcase 2s forwards;
   margin-bottom: 2rem;
 }
 
@@ -25,7 +25,7 @@
   width: 100vw;
   z-index: -1;
   background-color: #161a1f;
-  animation: expandShowcase 3s forwards;
+  animation: expandShowcase 2s forwards;
 }
 
 .projects-title {
@@ -50,7 +50,7 @@
 .showcase-grid {
   opacity: 0;
   animation: showElement 1s forwards;
-  animation-delay: 3s;
+  animation-delay: 2s;
 }
 
 @keyframes expandShowcase {

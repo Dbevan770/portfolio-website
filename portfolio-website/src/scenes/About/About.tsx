@@ -111,20 +111,12 @@ const About = () => {
                             imgClass={`skill-grid-item ${
                               activeImg === language.id ? "active-img" : ""
                             }`}
-                            src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${language.id}/${language.id}-original.svg`}
+                            src={`/icons/languages/${language.id}-original.svg`}
                             width="80px"
                             height="80px"
-                            changeActiveImg={changeActiveImg}
+                            callback={changeActiveImg}
                             id={language.id}
                           />
-                          {/* <img
-                            className={`skill-grid-item ${
-                              activeImg === language.id ? "active-img" : ""
-                            }`}
-                            src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${language.id}/${language.id}-original.svg`}
-                            alt={language.id}
-                            onClick={() => changeActiveImg(language.id)}
-                          /> */}
                           <span className="skill-grid-tagline">
                             {language.title}
                           </span>
