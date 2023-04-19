@@ -37,12 +37,12 @@
     "title": "Python",
     "bio": "Everyone knows Python."
   },
-  "csharp": {
-    "title": "C#",
+  "docker": {
+    "title": "Docker",
     "bio": "Microsoft Java"
   },
-  "cplusplus": {
-    "title": "C++",
+  "amazonwebservices": {
+    "title": "AWS",
     "bio": "The foundation of everything."
   },
   "mysql": {

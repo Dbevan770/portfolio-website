@@ -1,8 +1,25 @@
 import { useState } from "react";
 import "./ImgPlaceholder.css";
 
-export default function ImgPlaceholder(props: any) {
+interface ImgPlaceholderProps {
+  containerClass?: string;
+  width: string;
+  height: string;
+  imgClass?: string;
+  src: string;
+  customId?: string;
+  id?: string;
+  callback?(args: any): void;
+}
+
+export default function ImgPlaceholder(props: ImgPlaceholderProps) {
   const [isLoading, setIsLoading] = useState(true);
+
+  const handleClick = () => {
+    if (props.callback) {
+      props.callback(props.id);
+    }
+  };
 
   const handleLoad = () => {
     setIsLoading(false);
@@ -41,7 +58,7 @@ export default function ImgPlaceholder(props: any) {
           }}
           onLoad={handleLoad}
           alt={props.src}
-          onClick={() => props.changeActiveImg(props.id)}
+          onClick={handleClick}
         />
       </div>
     </>

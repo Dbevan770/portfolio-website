@@ -3,6 +3,7 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 2fr 1fr;
   width: 100%;
+  overflow: hidden;
 }
 
 .showcase-project-title {
@@ -15,8 +16,17 @@
 
 .showcase-project-description {
   grid-column: 2 / 3;
-  grid-row: 2 / 4;
+  grid-row: 2 / 3;
+  line-height: 2rem;
   color: var(--off-white-color);
   font-size: 1.125rem;
-  padding-left: 2rem;
+  padding: 0 2rem 1rem 2rem;
+  margin: 0;
+}
+
+.showcase-languages {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 2rem;
 }

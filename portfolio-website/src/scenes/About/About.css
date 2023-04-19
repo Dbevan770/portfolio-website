@@ -124,6 +124,7 @@ input:checked + .slider::before {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 80px;
 }
 
 .skill-grid-item {
@@ -144,11 +145,17 @@ input:checked + .slider::before {
   width: 100%;
   text-align: center;
   font-size: 0.9rem;
+  font-size-adjust: 0.5;
   padding: 0.25rem 0.25rem;
   font-weight: 700;
   visibility: hidden;
   color: var(--secondary-bg-color);
   text-transform: uppercase;
+}
+
+.skill-grid-item-container:first-child .skill-grid-tagline,
+.skill-grid-item-container:nth-child(2) .skill-grid-tagline {
+  font-size: 0.8rem;
 }
 
 .skills-loading {
