@@ -28,6 +28,16 @@ const ProjectShowcase = (props: any) => {
       </div>
       <h1 className="showcase-project-title">{activeProject.title}</h1>
       <p className="showcase-project-description">{activeProject.full_desc}</p>
+      <div className="showcase-btns">
+        {activeProject.live && (
+          <a href={activeProject.live} className="showcase-btn">
+            Live
+          </a>
+        )}
+        <a href={activeProject.code} className="showcase-btn">
+          Code
+        </a>
+      </div>
     </div>
   );
 };
