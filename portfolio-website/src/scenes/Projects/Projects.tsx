@@ -51,8 +51,7 @@ const Projects = () => {
     <div className="projects" id="projects">
       <section className="projects-section">
         <div className="projects-header">
-          <h3 className="projects-title">Projects</h3>
-          <span className="projects-subtitle">Click to see more!</span>
+          <h3 className="projects-title">My Favorite Projects</h3>
         </div>
         {activeProject && (
           <div className="project-summary-showcase">
