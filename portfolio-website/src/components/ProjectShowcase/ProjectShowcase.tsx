@@ -30,11 +30,11 @@ const ProjectShowcase = (props: any) => {
       <p className="showcase-project-description">{activeProject.full_desc}</p>
       <div className="showcase-btns">
         {activeProject.live && (
-          <a href={activeProject.live} className="showcase-btn">
+          <a href={activeProject.live} className="showcase-btn" target="_blank">
             Live
           </a>
         )}
-        <a href={activeProject.code} className="showcase-btn">
+        <a href={activeProject.code} className="showcase-btn" target="_blank">
           Code
         </a>
       </div>
