@@ -1,5 +1,6 @@
 import "./PreviewCarousel.css";
-import { useState, CSSProperties } from "react";
+import { useState, CSSProperties, useEffect } from "react";
+import ImgPlaceholder from "../ImgPlaceholder/ImgPlaceholder";
 
 const PreviewCarousel = (props: any) => {
   const [images, setImages] = useState<Array<string>>(props.images);
@@ -37,6 +38,11 @@ const PreviewCarousel = (props: any) => {
     setAnimationActive(false);
   };
 
+  useEffect(() => {
+    setImages(props.images);
+    setActiveIndex(0);
+  }, [props.images]);
+
   const renderImages = () => {
     return images.map((src: string, index: number) => {
       const zIndex = images.length - index;
@@ -52,16 +58,23 @@ const PreviewCarousel = (props: any) => {
           style={style}
           onClick={() => handleClick()}
           onAnimationEnd={onAnimationEnd}
+          onLoad={props.onImageLoad}
         />
       ) : (
-        <img key={index} src={src} className={className} style={style} />
+        <img
+          key={index}
+          src={src}
+          className={className}
+          style={style}
+          onLoad={props.onImageLoad}
+        />
       );
     });
   };
 
   return (
-    <div className="carousel-container">
-      {renderImages()}
+    <div className={`carousel-container ${props.hidden ? "hidden" : ""}`}>
+      <div className="carousel-images">{renderImages()}</div>
       <div className="carousel-dots">
         {images.map((item: any, index: number) => (
           <div

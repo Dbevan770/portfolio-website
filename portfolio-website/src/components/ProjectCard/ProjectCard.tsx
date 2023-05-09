@@ -1,6 +1,4 @@
 import "./ProjectCard.css";
-import ImgPlaceholder from "../ImgPlaceholder/ImgPlaceholder";
-import { useState } from "react";
 
 const ProjectCard = (props: any) => {
   const id = props.id;
@@ -20,13 +18,9 @@ const ProjectCard = (props: any) => {
       <div className="card-content">
         <h2 className="card-title">{props.title}</h2>
         <p className="card-body">{props.short_desc}</p>
-        <a
-          href="javascript:void(0)"
-          className="card-button"
-          onClick={handleClick}
-        >
+        <button onClick={handleClick} className="card-button">
           Learn More
-        </a>
+        </button>
       </div>
     </div>
   );

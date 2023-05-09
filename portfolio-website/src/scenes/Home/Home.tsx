@@ -3,7 +3,7 @@ import ImgPlaceholder from "../../components/ImgPlaceholder/ImgPlaceholder";
 
 const Home = () => {
   return (
-    <div className="home" id="home">
+    <div className="home">
       <section className="hero-section">
         <div className="hero-content">
           <h1 className="hero-title">Hi, I'm Danny</h1>
@@ -16,6 +16,14 @@ const Home = () => {
             team.
           </p>
         </div>
+        <svg
+          className="hero-diagonal"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <polygon points="50,0 100,0 50,100 0,100"></polygon>
+        </svg>
         <ImgPlaceholder
           containerClass="hero-image-container"
           imgClass="hero-image"
@@ -23,11 +31,6 @@ const Home = () => {
           width="750px"
           height="524px"
         />
-        {/* <img
-          className="hero-image"
-          src="/images/hero.png"
-          alt="Stylized image of a coding window"
-        /> */}
       </section>
     </div>
   );

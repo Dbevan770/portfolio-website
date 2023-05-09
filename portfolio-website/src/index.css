@@ -7,6 +7,8 @@
   --main-blue: #429ef5;
   --main-bg-color: #060b10;
   --secondary-bg-color: #15212e;
+  --inactive-carousel-color: #747474;
+  --active-carousel-color: #ffffff;
   --blue-green-linear-gradient: linear-gradient(
     135deg,
     var(--main-blue),

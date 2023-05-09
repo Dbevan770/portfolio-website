@@ -7,7 +7,7 @@ import Contact from "./scenes/Contact/Contact";
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="App" id="home">
       <Navbar />
       <Home />
       <About />

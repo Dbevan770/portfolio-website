@@ -6,7 +6,14 @@
     "live": "https://ec2-54-175-236-193.compute-1.amazonaws.com/",
     "code": "https://github.com/Dbevan770/Onlinebookstore-group-4",
     "full_desc": "This is an e-commerce project made using the MERN (MongoDB, ExpressJS, ReactJS, and NodeJS) tech stack. It is a mystery themed online bookstore that features JSON Web Token authentication written from scratch and persistent cart tracking for signed in users. It also features a search function and admin dashboard. Payments are handled via Stripe integration using the test mode.",
-    "languages": ["javascript", "mongodb", "react", "nodejs"]
+    "languages": ["javascript", "mongodb", "react", "nodejs"],
+    "images": [
+      "/images/projects/mysteryincbookstore/mibs_home.webp",
+      "/images/projects/mysteryincbookstore/mibs_home_cart.webp",
+      "/images/projects/mysteryincbookstore/mibs_admin.webp",
+      "/images/projects/mysteryincbookstore/mibs_checkout.webp",
+      "/images/projects/mysteryincbookstore/mibs_stripe.webp"
+    ]
   },
   {
     "title": "Destiny Mod Checker",
@@ -14,7 +21,12 @@
     "tag": "dmc",
     "code": "https://github.com/Dbevan770/destiny-mod-checker",
     "full_desc": "",
-    "languages": ["python"]
+    "languages": ["python"],
+    "images": [
+      "/images/projects/destinymodchecker/destinymodchecker.webp",
+      "/images/projects/destinymodchecker/Ada-1.jpg",
+      "/images/projects/destinymodchecker/Banshee-44.webp"
+    ]
   },
   {
     "title": "Bank Tracker",
@@ -22,6 +34,11 @@
     "tag": "bt",
     "code": "https://github.com/Dbevan770/bank-tracker",
     "full_desc": "",
-    "languages": ["html5", "css3", "javascript", "python"]
+    "languages": ["html5", "css3", "javascript", "python"],
+    "images": [
+      "/images/projects/banktracker/banktracker.webp",
+      "/images/projects/banktracker/sheet_naming_page.webp",
+      "/images/projects/banktracker/example_formatted.webp"
+    ]
   }
 ]

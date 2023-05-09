@@ -59,9 +59,13 @@
 
 .card-button {
   cursor: pointer;
+  outline: none;
+  border: none;
   display: inline-block;
   text-decoration: none;
   color: black;
+  font-size: 1rem;
+  font-weight: 400;
   background-color: lightgreen;
   padding: 0.5em 1.25em;
   border-radius: 0.25rem;
