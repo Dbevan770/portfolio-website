@@ -11,6 +11,7 @@ interface Project {
   code: string;
   full_desc: string;
   languages: Array<string>;
+  images: Array<string>;
 }
 
 const Projects = () => {

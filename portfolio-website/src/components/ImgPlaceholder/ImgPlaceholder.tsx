@@ -10,6 +10,7 @@ interface ImgPlaceholderProps {
   customId?: string;
   id?: string;
   callback?(args: any): void;
+  onAnimationEnd?(args: any): void;
 }
 
 export default function ImgPlaceholder(props: ImgPlaceholderProps) {

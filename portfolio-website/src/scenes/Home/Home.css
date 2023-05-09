@@ -1,4 +1,5 @@
 .hero-section {
+  position: relative;
   max-width: 1500px;
   margin: 0 auto;
   font-family: var(--default-font);
@@ -8,7 +9,10 @@
 
 .hero-content {
   align-self: center;
-  padding: 2em;
+  padding: 2rem 2rem 2rem 2rem;
+  z-index: 3;
+  opacity: 0;
+  animation: slidein 1000ms ease, fadein 1200ms linear forwards;
 }
 
 .hero-title {
@@ -31,8 +35,46 @@
   line-height: 2.25rem;
 }
 
+.hero-diagonal {
+  display: block;
+  fill: var(--main-bg-color);
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  overflow: hidden;
+  height: 100%;
+  width: 12rem;
+  transform: translate(50%, -50%);
+  z-index: 2;
+}
+
+.hero-image-container {
+  position: absolute;
+  width: 100% !important;
+}
+
 .hero-image {
   width: 100%;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 480px) {

@@ -1,19 +1,47 @@
 import "./ProjectShowcase.css";
 import PreviewCarousel from "../PreviewCarousel/PreviewCarousel";
 import ImgPlaceholder from "../ImgPlaceholder/ImgPlaceholder";
+import { useState, useEffect } from "react";
 
 const ProjectShowcase = (props: any) => {
   const activeProject = props.activeProject;
-  const images = [
-    "/images/projects/mysteryincbookstore/mibs_home.png",
-    "/images/projects/mysteryincbookstore/mibs_home_cart.png",
-    "/images/projects/mysteryincbookstore/mibs_admin.png",
-    "/images/projects/mysteryincbookstore/mibs_checkout.png",
-    "/images/projects/mysteryincbookstore/mibs_stripe.png",
-  ];
+  const [imagesLoading, setImagesLoading] = useState<boolean>(true);
+  const [loadedImagesCount, setLoadedImagesCount] = useState<number>(0);
+
+  const handleImageLoad = () => {
+    setLoadedImagesCount((prev) => {
+      const newCount = prev + 1;
+      if (newCount === activeProject.images.length) {
+        setImagesLoading(false);
+      }
+      return newCount;
+    });
+  };
+
+  useEffect(() => {
+    setImagesLoading(true);
+    setLoadedImagesCount(0);
+  }, [activeProject]);
+
   return (
     <div className="showcase-grid">
-      <PreviewCarousel images={images} />
+      <div className="carousel-wrapper">
+        <PreviewCarousel
+          images={activeProject.images}
+          onImageLoad={handleImageLoad}
+          hidden={imagesLoading}
+        />
+        {imagesLoading && (
+          <div className="carousel-loading-container">
+            <div className="lds-ring">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        )}
+      </div>
       <div className="showcase-languages">
         {activeProject.languages.map((language: string, index: number) => (
           <ImgPlaceholder
