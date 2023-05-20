@@ -6,7 +6,7 @@ const ProjectCard = (props: any) => {
   const style = {
     backgroundImage: `url(/images/projects/${props.title
       .replace(/[^A-Z0-9]/gi, "")
-      .toLowerCase()}.avif)`,
+      .toLowerCase()}.jpg)`,
   };
 
   const handleClick = () => {

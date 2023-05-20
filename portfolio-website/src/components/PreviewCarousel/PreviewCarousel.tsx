@@ -10,7 +10,7 @@ const PreviewCarousel = (props: any) => {
   const handleClick = () => {
     if (!animationActive) {
       setAnimationActive(true);
-      if (activeIndex < 4) {
+      if (activeIndex < images.length - 1) {
         setActiveIndex(activeIndex + 1);
       } else {
         setActiveIndex(0);

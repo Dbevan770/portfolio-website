@@ -270,4 +270,40 @@ input:checked + .slider::before {
     width: 100%;
     height: auto;
   }
+
+  .skills-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .skill-grid {
+    row-gap: 1.75rem;
+  }
+
+  .skill-grid-item-container {
+    justify-content: flex-start !important;
+    max-height: 60px;
+    max-width: 60px !important;
+  }
+
+  .skill-grid-item {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .skill-grid-tagline {
+    display: none;
+  }
+
+  .skills-loading {
+    height: 390px;
+  }
+
+  .description-loading {
+    padding-top: 2rem;
+  }
+
+  .description-loading-bio {
+    width: 100%;
+  }
 }
