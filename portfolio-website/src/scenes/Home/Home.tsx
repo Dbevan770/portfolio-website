@@ -27,7 +27,7 @@ const Home = () => {
         <ImgPlaceholder
           containerClass="hero-image-container"
           imgClass="hero-image"
-          src="/images/hero.avif"
+          src="/images/hero.png"
           width="750px"
           height="524px"
         />

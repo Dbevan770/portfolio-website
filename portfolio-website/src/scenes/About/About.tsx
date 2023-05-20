@@ -73,7 +73,7 @@ const About = () => {
             <ImgPlaceholder
               containerClass="about-image-container"
               imgClass="about-image"
-              src="/images/About_Me.avif"
+              src="/images/About_Me.PNG"
               width="661px"
               height="462px"
             />
