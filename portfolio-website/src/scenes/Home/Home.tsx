@@ -16,21 +16,6 @@ const Home = () => {
             team.
           </p>
         </div>
-        <svg
-          className="hero-diagonal"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <polygon points="50,0 100,0 50,100 0,100"></polygon>
-        </svg>
-        <ImgPlaceholder
-          containerClass="hero-image-container"
-          imgClass="hero-image"
-          src="/images/hero.png"
-          width="750px"
-          height="524px"
-        />
       </section>
     </div>
   );
