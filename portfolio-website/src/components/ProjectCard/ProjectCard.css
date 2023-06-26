@@ -7,8 +7,9 @@
   max-width: 400px;
   border-radius: 1rem;
   overflow: hidden;
+  mix-blend-mode: luminosity;
 
-  transition: transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out, mix-blend-mode 0.2s linear;
 }
 
 .project-card:focus-within {
@@ -18,6 +19,7 @@
 .project-card:hover,
 .project-card:focus-within {
   transform: scale(1.05);
+  mix-blend-mode: normal;
 }
 
 .card-content {

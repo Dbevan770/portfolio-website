@@ -2,6 +2,17 @@ import "./Home.css";
 import ImgPlaceholder from "../../components/ImgPlaceholder/ImgPlaceholder";
 
 const Home = () => {
+  const scrollToSection = (
+    id: string,
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    event?.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="home">
       <section className="hero-section">
@@ -15,22 +26,23 @@ const Home = () => {
             journey and am confident I will be a fantastic addition to your
             team.
           </p>
+          <div className="hero-btn-container">
+            <a
+              href="#projects"
+              className="hero-btn-primary"
+              onClick={(e) => scrollToSection("projects", e)}
+            >
+              My Work
+            </a>
+            <a
+              href="https://docs.google.com/document/d/10Oe0TA5m2bjHTuuF4GDfGwnojERJ4Pgx/edit?usp=sharing&ouid=116974167728244284383&rtpof=true&sd=true"
+              target="_blank"
+              className="hero-btn-secondary"
+            >
+              Resume
+            </a>
+          </div>
         </div>
-        <svg
-          className="hero-diagonal"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <polygon points="50,0 100,0 50,100 0,100"></polygon>
-        </svg>
-        <ImgPlaceholder
-          containerClass="hero-image-container"
-          imgClass="hero-image"
-          src="/images/hero.png"
-          width="750px"
-          height="524px"
-        />
       </section>
     </div>
   );
