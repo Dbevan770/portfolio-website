@@ -55,17 +55,40 @@
   line-height: 2.25rem;
 }
 
-.hero-diagonal {
-  display: block;
-  fill: var(--main-bg-color);
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  overflow: hidden;
-  height: 100%;
-  width: 12rem;
-  transform: translate(50%, -50%);
-  z-index: 2;
+.hero-btn-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.hero-btn-container > a {
+  padding: 1em 3em;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.hero-btn-primary {
+  background-color: var(--main-blue);
+  color: black;
+  transition: background-color 250ms ease-in-out;
+}
+
+.hero-btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--main-blue);
+  color: var(--main-blue);
+  transition: background-color 250ms ease-in-out, border 250ms ease-in-out;
+}
+
+.hero-btn-primary:hover,
+.hero-btn-secondary:hover {
+  background-color: var(--off-white-color);
+  color: black;
+}
+
+.hero-btn-secondary:hover {
+  border: 2px solid var(--off-white-color);
 }
 
 .hero-image-container {

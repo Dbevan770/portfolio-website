@@ -3,7 +3,7 @@
     "title": "Mystery Inc. Bookstore",
     "short_desc": "A bookstore made with the MERN stack. Senior group project from College",
     "tag": "mibs",
-    "live": "https://ec2-54-175-236-193.compute-1.amazonaws.com/",
+    "live": "https://tourmaline-madeleine-ac0149.netlify.app/",
     "code": "https://github.com/Dbevan770/Onlinebookstore-group-4",
     "full_desc": "This is an e-commerce project made using the MERN (MongoDB, ExpressJS, ReactJS, and NodeJS) tech stack. It is a mystery themed online bookstore that features JSON Web Token authentication written from scratch and persistent cart tracking for signed in users. It also features a search function and admin dashboard. Payments are handled via Stripe integration using the test mode.",
     "languages": ["javascript", "mongodb", "react", "nodejs"],
