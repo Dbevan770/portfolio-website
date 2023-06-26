@@ -1,21 +1,16 @@
 .navbar-container {
-  position: sticky;
+  position: absolute;
+  width: 100%;
   top: 0;
   z-index: 10;
   font-family: var(--default-font);
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.6);
-  transition: background-color ease-in-out 0.25s;
-}
-
-.navbar-container:hover {
-  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .navbar-list {
-  margin: 1.5rem auto;
+  margin-right: 4rem;
   list-style: none;
   padding: 0;
   display: flex;
@@ -27,8 +22,10 @@
 .navbar-item {
   position: relative;
   text-decoration: none;
-  color: var(--inactive-text-color);
+  color: rgba(0, 0, 0, 0.4);
   font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
 }
 
 .navbar-icon {
